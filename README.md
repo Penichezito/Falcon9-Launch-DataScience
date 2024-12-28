@@ -126,3 +126,80 @@ The collected data includes various attributes relevant to the task, such as:
 ### Data Storage
 
 The final dataset is saved as a CSV file named `dataset_part_1.csv`. This file serves as the foundation for subsequent data wrangling, feature engineering, and model development stages.
+
+
+# **Data Collection and Processing using Web Scraping**
+
+It involves making HTTP requests to the API endpoint and parsing the JSON response to extract relevant information.
+
+## Project Overview
+
+Retrieves SpaceX launch data using the SpaceX API, processes and cleans it, and exports it to a CSV file. The process includes data wrangling, extracting additional information through API calls, handling missing values, and filtering the data.
+
+## Key Steps
+
+1.  **Importing Libraries:**
+
+    The following Python libraries are used:
+
+    *   `requests`: For making HTTP requests to the SpaceX API.
+    *   `pandas`: For data manipulation and analysis using DataFrames.
+    *   `numpy`: For numerical operations.
+    *   `datetime`: For working with dates and times.
+
+    ```python
+    import requests
+    import pandas as pd
+    import numpy as np
+    import datetime
+    ```
+
+2.  **API Request:**
+
+    *   The core URL for the SpaceX API is stored in the `spacex_url` variable.
+    *   A GET request is made to the API using `requests.get(spacex_url)`.
+    *   The response is converted to JSON format using `response.json()`.
+
+    ```python
+    spacex_url = "YOUR_SPACEX_API_URL" # Replace with the actual URL
+    response = requests.get(spacex_url)
+    data = response.json()
+    ```
+
+3.  **Data Wrangling:**
+
+    *   The JSON data is normalized into a Pandas DataFrame named `data` using `pd.json_normalize()`.
+    *   Relevant columns (`rocket`, `payloads`, `launchpad`, `cores`, `flight_number`, and `date_utc`) are selected.
+    *   Data is filtered to keep only Falcon 9 launches and those with single cores and payloads.
+    *   Nested data within `cores` and `payloads` is extracted into separate columns.
+    *   The `date_utc` column is converted to a datetime object, and the date is extracted.
+    *   Data is restricted to launches before November 13, 2020.
+
+4.  **Extracting Additional Information:**
+
+    *   Helper functions (`getBoosterVersion`, `getLaunchSite`, `getPayloadData`, and `getCoreData`) are defined to extract additional details from the API using specific IDs found in the initial data.
+    *   These functions iterate through the data and make API requests for each launch to retrieve information about the booster version, launch site, payload mass, orbit, and core landing outcomes.
+
+5.  **Building the Final Dataset:**
+
+    *   The extracted data is stored in global lists (e.g., `BoosterVersion`, `PayloadMass`, `Orbit`, etc.).
+    *   These lists are combined into a dictionary `launch_dict`.
+    *   The dictionary is converted into a Pandas DataFrame named `launch_df`.
+    *   The DataFrame is filtered to keep only Falcon 9 launches.
+    *   Flight numbers are reset to sequential order.
+
+6.  **Handling Missing Values:**
+
+    *   Missing values in the `PayloadMass` column are replaced with the mean value using the `replace()` function.
+
+7.  **Data Export:**
+
+    *   The cleaned dataset is exported to a CSV file named `dataset_part_1.csv` using `data_falcon9.to_csv()`.
+
+    ```python
+    data_falcon9.to_csv('dataset_part_1.csv', index=False)
+    ```
+
+## File Output
+
+The project outputs a CSV file named `dataset_part_1.csv` containing the processed SpaceX launch data.
