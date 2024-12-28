@@ -13,7 +13,7 @@ The primary objective is to develop a machine learning model to predict the succ
 The notebook is organized into the following sections:
 
 1. **Data Collection:** Utilizing the SpaceX API to collect relevant data on past Falcon 9 launches.
-2. **Data Processing:** Cleaning, wrangling, and transforming the collected data into a usable format.
+2. **Data Preprocessing:** Cleaning, wrangling, and transforming the collected data into a usable format.
 3. **Feature Engineering:** Creating new features or manipulating existing features to improve model performance.
 4. **Model Selection:** Selecting a suitable machine learning model for landing prediction.
 5. **Model Training:** Training the selected model using the prepared dataset.
@@ -77,7 +77,7 @@ bash pip install requests pandas numpy datetime
     - Building interactive visualizations to present your findings.
     - Deploying the model for real-time predictions.
 
-# Data Collection
+# **Step 1: Data Collection**
 
 This project focuses on predicting the success of SpaceX Falcon 9 first stage landings using machine learning. A crucial initial step is the data collection process, which involves retrieving and organizing relevant data about past Falcon 9 launches.
 
@@ -209,3 +209,33 @@ Retrieves SpaceX launch data using the SpaceX API, processes and cleans it, and 
 ## File Output
 
 The project outputs a CSV file named `dataset_part_1.csv` containing the processed SpaceX launch data.
+
+# **Step 2: Data Preprocessing - Data Wrangling, Exploratory Data Analysis and Feature Engineering**
+
+This step focuses on understanding the data and preparing it for machine learning. We perform the following tasks:
+
+**1. Exploratory Data Analysis (EDA):**
+
+   - **Data Understanding:** We use various techniques like descriptive statistics (mean, median, standard deviation), data visualization (histograms, scatter plots), and data profiling to gain insights into the dataset. This helps us understand the distribution of data, identify potential outliers, and discover relationships between features.
+   - **Missing Value Analysis:** We identify and handle missing values in the dataset. Missing values can negatively impact model performance, so we either impute them (replace with estimated values) or remove the corresponding data points.
+   - **Data Cleaning:** We perform data cleaning operations such as removing duplicates, correcting inconsistencies, and converting data types to ensure data quality.
+
+**2. Determining Training Labels:**
+
+   - **Target Variable:** We identify the target variable, which is the outcome we want to predict (in this case, whether the first stage of the Falcon 9 rocket landed successfully).
+   - **Label Encoding:** We convert the target variable into a binary format (0 for unsuccessful landing, 1 for successful landing) suitable for supervised learning models. This involves analyzing the different landing outcomes and categorizing them as either successful or unsuccessful.
+
+**3. Feature Analysis and Relationship with Landing Outcomes:**
+
+   - **Feature Importance:** We analyze the relationship between different features (e.g., payload mass, orbit, launch site) and the landing outcome. This helps us understand which features are most influential in predicting landing success.
+   - **Correlation Analysis:** We investigate the correlation between features to identify potential multicollinearity (high correlation between independent variables). This is important to avoid redundancy and improve model interpretability.
+
+**4. Feature Engineering:**
+
+   - **Creating New Features:** Based on our understanding of the data and the relationships between features, we might engineer new features that can enhance model performance. This could involve combining existing features, creating interaction terms, or transforming variables.
+   - **Feature Scaling:** We might scale or standardize features to ensure they have a similar range of values. This can help improve the performance of certain machine learning algorithms.
+
+**5. Success Rate Calculation:**
+
+   - **Overall Success Rate:** We calculate the overall success rate of launches by dividing the number of successful landings by the total number of launches. This gives us a baseline measure of launch success.
+   - **Success Rate by Feature:** We might also calculate the success rate based on different feature values (e.g., success rate for launches from a particular launch site) to gain further insights.
