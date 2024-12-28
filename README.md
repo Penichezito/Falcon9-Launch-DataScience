@@ -20,6 +20,12 @@ The notebook is organized into the following sections:
 6. **Model Evaluation:** Evaluating the performance of the model using appropriate metrics.
 7. **Prediction:** Using the trained model to predict the landing outcome of future Falcon 9 launches.
 
+## Files
+
+- `SpaceX_project.ipynb`: Jupyter Notebook containing the project code and analysis.
+- `dataset_part_1.csv`: CSV file containing the cleaned and formatted launch data after Step 1.
+- `dataset_part_2.csv`: CSV file containing the final dataset with engineered features and target variable after Step 2.
+
 ## Usage Instructions
 
 This notebook is designed to be run in a Google Colab environment or a similar Jupyter Notebook environment. To utilize this notebook effectively, follow these steps:
