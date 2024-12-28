@@ -128,7 +128,7 @@ The collected data includes various attributes relevant to the task, such as:
 The final dataset is saved as a CSV file named `dataset_part_1.csv`. This file serves as the foundation for subsequent data wrangling, feature engineering, and model development stages.
 
 
-# **Data Collection and Processing using Web Scraping**
+# (Optional)**Data Collection and Processing using Web Scraping**
 
 It involves making HTTP requests to the API endpoint and parsing the JSON response to extract relevant information.
 
