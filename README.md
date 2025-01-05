@@ -243,11 +243,11 @@ This step focuses on understanding the data and preparing it for machine learnin
    - **Overall Success Rate:** We calculate the overall success rate of launches by dividing the number of successful landings by the total number of launches. This gives us a baseline measure of launch success.
    - **Success Rate by Feature:** We might also calculate the success rate based on different feature values (e.g., success rate for launches from a particular launch site) to gain further insights.
 
-## EDA with Python
+## Step 3 - EDA with Python
 
 
 
-## **EDA with SQL - Exploratory Data Analysis**
+## (Step 3 Optional)**EDA with SQL - Exploratory Data Analysis**
 
 **Key Features:**
 
