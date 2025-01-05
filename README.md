@@ -234,8 +234,50 @@ This step focuses on understanding the data and preparing it for machine learnin
 
    - **Creating New Features:** Based on our understanding of the data and the relationships between features, we might engineer new features that can enhance model performance. This could involve combining existing features, creating interaction terms, or transforming variables.
    - **Feature Scaling:** We might scale or standardize features to ensure they have a similar range of values. This can help improve the performance of certain machine learning algorithms.
+   - 
 
 **5. Success Rate Calculation:**
 
    - **Overall Success Rate:** We calculate the overall success rate of launches by dividing the number of successful landings by the total number of launches. This gives us a baseline measure of launch success.
    - **Success Rate by Feature:** We might also calculate the success rate based on different feature values (e.g., success rate for launches from a particular launch site) to gain further insights.
+
+## (Step 2 Optional) **EDA with SQL - Data Wrangling, Exploratory Data Analysis**
+
+**Key Features:**
+
+* **Data Loading and Preprocessing:** The notebook demonstrates how to download the SpaceX dataset as a CSV file and load it into a SQLite database using pandas.
+  
+* **SQL Queries:** The notebook includes a series of SQL queries to answer various questions about the dataset, such as:
+    * Identifying unique launch sites
+    * Calculating total payload mass for specific customers
+    * Determining average payload mass for booster versions
+    * Finding the date of the first successful ground pad landing
+    * Listing boosters with successful drone ship landings and specific payload mass ranges
+    * Analyzing mission outcomes
+    * Identifying boosters with maximum payload mass
+    * Extracting launch data for specific months and years
+    * Ranking landing outcomes within a date range
+* **Data Visualization:** While the current version primarily focuses on SQL queries, you can extend it to include data visualizations to further enhance the analysis.
+
+## Usage
+
+1. **Clone the repository:**
+2. **Open the Jupyter Notebook:**
+   Navigate to the cloned repository and open the `SQL_Notebook_Falcon_9_SpaceX_dataset.ipynb` file in Jupyter Notebook or Google Colab.
+
+3. **Run the notebook cells:**
+   Execute the notebook cells sequentially to load the data, execute the SQL queries, and view the results.
+
+4. **Explore the analysis:**
+   Examine the results of the SQL queries to gain insights into the SpaceX Falcon 9 launch data.
+
+## Requirements
+
+* **Python 3:** Ensure you have Python 3 installed on your system.
+* **Libraries:** The notebook requires the following libraries:
+    * pandas
+    * sqlalchemy
+    * ipython-sql
+    * sqlite3
+    * prettytable
+ 
