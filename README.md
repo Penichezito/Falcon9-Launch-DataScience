@@ -212,7 +212,7 @@ Retrieves SpaceX launch data using the SpaceX API, processes and cleans it, and 
 
 The project outputs a CSV file named `dataset_part_1.csv` containing the processed SpaceX launch data.
 
-# **Step 2: Data Preprocessing - Data Wrangling, Exploratory Data Analysis and Feature Engineering**
+# **Step 2: Data Preprocessing - Data Wrangling**
 
 This step focuses on understanding the data and preparing it for machine learning. We perform the following tasks:
 
@@ -243,7 +243,11 @@ This step focuses on understanding the data and preparing it for machine learnin
    - **Overall Success Rate:** We calculate the overall success rate of launches by dividing the number of successful landings by the total number of launches. This gives us a baseline measure of launch success.
    - **Success Rate by Feature:** We might also calculate the success rate based on different feature values (e.g., success rate for launches from a particular launch site) to gain further insights.
 
-## (Step 2 Optional) **EDA with SQL - Data Wrangling, Exploratory Data Analysis**
+## EDA with Python
+
+
+
+## **EDA with SQL - Exploratory Data Analysis**
 
 **Key Features:**
 
