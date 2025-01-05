@@ -24,8 +24,9 @@ The notebook is organized into the following sections:
 ## Files
 
 - `SpaceX_project.ipynb`: Jupyter Notebook containing the project code and analysis.
-- `dataset_part_1.csv`: CSV file containing the cleaned and formatted launch data after Step 1.
-- `dataset_part_2.csv`: CSV file containing the final dataset with engineered features and target variable after Step 2.
+- `dataset_part_1.csv`: CSV file containing the cleaned and formatted launch data.
+- `dataset_part_2.csv`: CSV file containing the final dataset with Data Wrangling and engineered features and target variable.
+- `dataset_part_3.csv`: CSV file containing the final dataset with EDA.
 
 ## Usage Instructions
 
