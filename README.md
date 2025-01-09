@@ -1,5 +1,5 @@
 # SpaceX Falcon 9 First Stage Landing Prediction
-![](https://github.com/Penichezito/Falcon9-Launch-DataScience/blob/main/images/lifts-off.png)
+![](https://github.com/Penichezito/Falcon9-Launch-DataScience/blob/main/public/images/lifts-off.png)
 
 ## Introduction
 
