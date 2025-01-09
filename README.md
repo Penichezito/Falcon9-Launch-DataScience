@@ -243,8 +243,85 @@ This step focuses on understanding the data and preparing it for machine learnin
    - **Overall Success Rate:** We calculate the overall success rate of launches by dividing the number of successful landings by the total number of launches. This gives us a baseline measure of launch success.
    - **Success Rate by Feature:** We might also calculate the success rate based on different feature values (e.g., success rate for launches from a particular launch site) to gain further insights.
 
-## Step 3 - EDA with Python
+# Step 3: Exploratory Data Analysis (EDA)
 
+This step focuses on performing Exploratory Data Analysis (EDA) to gain insights into the SpaceX launch data and identify patterns that influence launch success.
+
+## Objectives
+
+*   **Exploratory Data Analysis:** Analyze the data to understand relationships between variables and their impact on launch outcomes.
+*   **Feature Selection:** Identify key features that contribute significantly to predicting launch success.
+
+## Data Loading
+
+The dataset used in this step is loaded from the CSV file "dataset\_part\_2.csv," which was created in the previous step.
+
+## Data Visualization
+
+### Flight Number vs. Payload Mass
+
+*   A scatter plot is generated to visualize the relationship between Flight Number and Payload Mass, with the launch outcome (Class) represented by color.
+*   **Observation:** As the flight number increases, the likelihood of successful first-stage landing also increases. Payload mass appears to have a less significant impact, with successful landings occurring even with heavier payloads.
+
+### Flight Number vs. Launch Site
+
+*   A categorical plot is created to show the relationship between Flight Number and Launch Site, with the launch outcome (Class) indicated by color.
+*   **Observation:** The success rate of landings tends to increase linearly with the number of attempts. Different launch sites exhibit varying patterns of success over time.
+
+### Payload Mass vs. Launch Site
+
+*   A categorical plot is generated to visualize the relationship between Payload Mass and Launch Site, with the launch outcome (Class) represented by color.
+*   **Observation:** The VAFB-SLC launch site does not handle rockets with heavy payload mass (greater than 10,000 kg).
+
+### Success Rate of Each Orbit Type
+
+*   A bar chart is created to display the success rate of each orbit type.
+*   **Observation:** Orbits like ESL-11, GEO, HEO, and SSO demonstrate higher success rates compared to others.
+
+### Flight Number vs. Orbit Type
+
+*   A scatter plot is generated to visualize the relationship between Flight Number and Orbit type, with the launch outcome (Class) indicated by color.
+*   **Observation:** This plot helps identify trends in launch success for different orbit types over time.
+
+### Payload Mass vs. Orbit Type
+
+*   A scatter plot is created to visualize the relationship between Payload Mass and Orbit type, with the launch outcome (Class) represented by color.
+*   **Observation:** Polar, LEO, and ISS orbits tend to have more successful landings with heavy payloads. GTO orbits show mixed results, making it difficult to discern a clear pattern.
+
+### Launch Success Yearly Trend
+
+*   A line chart is generated to illustrate the average launch success rate over the years.
+*   **Observation:** The success rate shows an increasing trend from 2013 to 2020.
+
+## Feature Engineering
+
+### Feature Selection
+
+*   Based on the insights gained from EDA, the following features are selected for use in the subsequent prediction model:
+    *   Flight Number
+    *   Payload Mass
+    *   Orbit
+    *   Launch Site
+    *   Flights
+    *   Grid Fins
+    *   Reused
+    *   Legs
+    *   Landing Pad
+    *   Block
+    *   Reused Count
+    *   Serial
+
+### Dummy Variables
+
+*   One-hot encoding is applied to categorical features (Orbit, Launch Site, Landing Pad, and Serial) to create dummy variables. This transforms categorical data into numerical representations suitable for machine learning models.
+
+### Data Type Conversion
+
+*   All numeric columns in the dataset are cast to the data type 'float64' for consistency and compatibility with machine learning algorithms.
+
+### Data Export
+
+*   The final processed dataset, including the selected features and dummy variables, is exported to a CSV file named ´dataset\_part\_3.csv´ for use in the next steps of the project.
 
 
 ## (Step 3 Optional)**EDA with SQL - Exploratory Data Analysis**
